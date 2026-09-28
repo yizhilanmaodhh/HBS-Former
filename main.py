@@ -155,7 +155,7 @@ def get_args_parser():
 
     # * Finetuning params 
 
-    parser.add_argument('--finetune', default='./svt_pre_imagenet.pth.tar', help='finetune from checkpoint')
+    parser.add_argument('--finetune', default='./pre_imagenet.pth.tar', help='finetune from checkpoint')
 
     # Dataset parameters
     #parser.add_argument('--data-path', default='../OpenDataLab___ImageNet-1K/raw/ImageNet-1K/data', type=str,help='dataset path')
