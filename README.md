@@ -4,8 +4,6 @@ Code for **Hierarchical Bilinear Scattering Transformer for Remote-Sensing Image
 
 HBS-Former combines a dual-stream scattering block (DWT and DTCWT), global–local dual-path feature aggregation, and hierarchical bilinear fusion for remote-sensing scene classification.
 
-> **Release note:** This README is a starting template. Before describing the repository as fully reproducible, verify that the uploaded model and training scripts match the experiments reported in the manuscript, and complete the setup checks below.
-
 ## Project structure
 
 ```text
@@ -48,8 +46,6 @@ Download these datasets from their respective providers. Prepare the train/test 
     └── ...
 ```
 
-The same class names and class-to-index mappings must be used for training and evaluation. Check that no image appears in both subsets. To reproduce the manuscript's five-run statistics, preserve or publish the exact split-generation procedure and random seeds `0, 1, 2, 3, 4`.
-
 ## Environment
 
 Create an environment with a Python and CUDA/PyTorch combination compatible with your GPU. Install PyTorch and torchvision according to your CUDA setup, then install the remaining dependencies:
@@ -57,12 +53,6 @@ Create an environment with a Python and CUDA/PyTorch combination compatible with
 ```bash
 pip install -r requirements.txt
 ```
-
-**Dependency to resolve before a clean installation:** the current `main.py` and `engine.py` still import `tlt.data` for token labeling, but the uploaded code does not include a `tlt/` package. Supply the corresponding upstream source with its license, or remove the unused token-labeling imports and branches if the published RSSC code does not use this feature. The optional `mcloader/` Memcached backend also requires its own `mc` environment if enabled.
-
-## Pretrained weights
-
-The manuscript uses an ImageNet-1K pretrained SVT checkpoint for initialization. Download the checkpoint from an authorized source and pass its local path using `--finetune`. Model weights and datasets are **not** included in this GitHub repository.
 
 ## Training
 
@@ -101,6 +91,3 @@ Record the exact checkpoint, dataset split, and seed used for each reported resu
 
 Citation details (DOI, year, volume, and page numbers) should be added after the final publication metadata is confirmed.
 
-## Acknowledgments and license
-
-This project builds on existing PyTorch and vision-transformer components. Identify any reused upstream code and comply with its applicable licenses before adding a license to this repository.
